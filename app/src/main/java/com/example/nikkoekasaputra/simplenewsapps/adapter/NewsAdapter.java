@@ -54,16 +54,32 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
                 .into(holder.imgNews);
         holder.lblTitleNews.setText(news.getTitleNews());
         holder.lblDateNews.setText(news.getDateNews().substring(0,10)+" "+news.getDateNews().substring(11,16));
-        holder.lblAuthorNews.setText(news.getAuthorNews());
+        if(news.getAuthorNews() == null){
+            holder.lblAuthorNews.setText("Unknown Author");
+        }
+        else{
+            holder.lblAuthorNews.setText(news.getAuthorNews());
+        }
+
         holder.cvNews.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(context, DetailNewsActivity.class);
                 i.putExtra("imgNews", news.getImgNews());
                 i.putExtra("titleNews", news.getTitleNews());
-                i.putExtra("contentNews", news.getContentNews());
+                if(news.getContentNews() == null){
+                    i.putExtra("contentNews", "No Description");
+                }
+                else{
+                    i.putExtra("contentNews", news.getContentNews());
+                }
                 i.putExtra("dateNews", news.getDateNews().substring(0,10)+" "+news.getDateNews().substring(11,16));
-                i.putExtra("authorNews", news.getAuthorNews());
+                if(news.getAuthorNews() == null){
+                    i.putExtra("authorNews", "Unknown Author");
+                }
+                else{
+                    i.putExtra("authorNews", news.getAuthorNews());
+                }
                 i.putExtra("sourceNews", news.getSourceNews());
                 context.startActivity(i);
                 ((Activity) context).overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);

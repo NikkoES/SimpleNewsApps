@@ -51,7 +51,7 @@ public class DetailNewsActivity extends AppCompatActivity {
         tvTitleNews.setText(titleNews);
         tvContentNews.setText(contentNews);
         tvDateNews.setText(dateNews);
-        tvSourceNews.setText("Source: "+sourceNews);
+        tvSourceNews.setText("view more");
         tvAuthorNews.setText(authorNews);
 
         tvSourceNews.setOnClickListener(new View.OnClickListener() {
@@ -87,7 +87,7 @@ public class DetailNewsActivity extends AppCompatActivity {
                 Intent i = new Intent(android.content.Intent.ACTION_SEND);
                 i.setType("text/plain");
                 i.putExtra(android.content.Intent.EXTRA_TEXT, titleNews+"\n\n"+contentNews+"\n\n"+sourceNews);
-                startActivity(Intent.createChooser(i, titleNews));
+                startActivity(Intent.createChooser(i, "Share this Article ?"));
                 break;
             }
         }

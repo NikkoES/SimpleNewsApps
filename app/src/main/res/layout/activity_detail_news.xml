@@ -91,13 +91,14 @@
                         <TextView
                             android:id="@+id/source_news"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="16dp"
-                            android:gravity="left"
-                            android:text="Sumber: www.xxx.com"
-                            android:textColor="#0022ff"
-                            android:textStyle="italic"
-                            android:textSize="12sp" />
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="View More"
+                            android:textAllCaps="true"
+                            android:textColor="@color/colorPrimary"
+                            android:textStyle="bold"
+                            android:textSize="16sp" />
 
                     </LinearLayout>
 
