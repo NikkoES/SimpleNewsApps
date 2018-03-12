@@ -1,5 +1,6 @@
 package com.example.nikkoekasaputra.simplenewsapps.activity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
@@ -69,15 +70,26 @@ public class DetailNewsActivity extends AppCompatActivity {
     }
 
     @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == android.R.id.home) {
-            finish();
-        }
-        else if(item.getItemId() == R.id.share){
-            Intent i = new Intent(android.content.Intent.ACTION_SEND);
-            i.setType("text/plain");
-            i.putExtra(android.content.Intent.EXTRA_TEXT, titleNews+"\n\n"+contentNews+"\n\n"+sourceNews);
-            startActivity(Intent.createChooser(i, titleNews));
+        switch (item.getItemId()){
+            case android.R.id.home : {
+                finish();
+                overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                break;
+            }
+            case R.id.share : {
+                Intent i = new Intent(android.content.Intent.ACTION_SEND);
+                i.setType("text/plain");
+                i.putExtra(android.content.Intent.EXTRA_TEXT, titleNews+"\n\n"+contentNews+"\n\n"+sourceNews);
+                startActivity(Intent.createChooser(i, titleNews));
+                break;
+            }
         }
         return super.onOptionsItemSelected(item);
     }

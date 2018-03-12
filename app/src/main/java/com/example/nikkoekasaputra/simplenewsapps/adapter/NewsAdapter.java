@@ -1,5 +1,6 @@
 package com.example.nikkoekasaputra.simplenewsapps.adapter;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -52,7 +53,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
                 .placeholder(R.drawable.ic_launcher_foreground)
                 .into(holder.imgNews);
         holder.lblTitleNews.setText(news.getTitleNews());
-        holder.lblDateNews.setText(news.getDateNews());
+        holder.lblDateNews.setText(news.getDateNews().substring(0,10)+" "+news.getDateNews().substring(11,16));
         holder.lblAuthorNews.setText(news.getAuthorNews());
         holder.cvNews.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,10 +62,11 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
                 i.putExtra("imgNews", news.getImgNews());
                 i.putExtra("titleNews", news.getTitleNews());
                 i.putExtra("contentNews", news.getContentNews());
-                i.putExtra("dateNews", news.getDateNews());
+                i.putExtra("dateNews", news.getDateNews().substring(0,10)+" "+news.getDateNews().substring(11,16));
                 i.putExtra("authorNews", news.getAuthorNews());
                 i.putExtra("sourceNews", news.getSourceNews());
                 context.startActivity(i);
+                ((Activity) context).overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
             }
         });
     }

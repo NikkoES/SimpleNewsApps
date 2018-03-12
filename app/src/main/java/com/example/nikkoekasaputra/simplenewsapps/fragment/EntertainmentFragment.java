@@ -14,7 +14,6 @@ import android.widget.Toast;
 import com.example.nikkoekasaputra.simplenewsapps.BuildConfig;
 import com.example.nikkoekasaputra.simplenewsapps.R;
 import com.example.nikkoekasaputra.simplenewsapps.adapter.NewsAdapter;
-import com.example.nikkoekasaputra.simplenewsapps.adapter.ViewPagerAdapter;
 import com.example.nikkoekasaputra.simplenewsapps.api.BaseApiService;
 import com.example.nikkoekasaputra.simplenewsapps.api.UtilsApi;
 import com.example.nikkoekasaputra.simplenewsapps.model.News;
@@ -30,19 +29,19 @@ import retrofit2.Response;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ScienceFragment extends Fragment {
+public class EntertainmentFragment extends Fragment {
 
     private RecyclerView rvNews;
     private NewsAdapter adapter;
     List<News> listNews = new ArrayList<>();
 
-    final String category = "science";
+    final String category = "entertainment";
 
     ProgressDialog loading;
 
     BaseApiService apiService;
 
-    public ScienceFragment() {
+    public EntertainmentFragment() {
         // Required empty public constructor
     }
 
@@ -54,7 +53,7 @@ public class ScienceFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_science, container, false);
+        View view = inflater.inflate(R.layout.fragment_entertainment, container, false);
 
         rvNews = (RecyclerView) view.findViewById(R.id.rv_news);
 
