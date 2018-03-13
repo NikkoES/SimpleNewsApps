@@ -30,12 +30,7 @@ public class DetailNewsActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Detail News");
 
-        ivImgNews = (ImageView) findViewById(R.id.img_news);
-        tvTitleNews = (TextView) findViewById(R.id.title_news);
-        tvContentNews = (TextView) findViewById(R.id.content_news);
-        tvAuthorNews = (TextView) findViewById(R.id.author_news);
-        tvDateNews = (TextView) findViewById(R.id.date_news);
-        tvSourceNews = (TextView) findViewById(R.id.source_news);
+        bindView();
 
         imgNews = getIntent().getStringExtra("imgNews");
         titleNews = getIntent().getStringExtra("titleNews");
@@ -60,6 +55,15 @@ public class DetailNewsActivity extends AppCompatActivity {
                 startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(sourceNews)));
             }
         });
+    }
+
+    public void bindView(){
+        ivImgNews = (ImageView) findViewById(R.id.img_news);
+        tvTitleNews = (TextView) findViewById(R.id.title_news);
+        tvContentNews = (TextView) findViewById(R.id.content_news);
+        tvAuthorNews = (TextView) findViewById(R.id.author_news);
+        tvDateNews = (TextView) findViewById(R.id.date_news);
+        tvSourceNews = (TextView) findViewById(R.id.source_news);
     }
 
     @Override
