@@ -59,7 +59,7 @@ public class HealthFragment extends Fragment {
 
         apiService = UtilsApi.getAPIService();
 
-        adapter = new NewsAdapter(getActivity(), listNews);
+        adapter = new NewsAdapter(getContext(), listNews);
 
         rvNews.setHasFixedSize(true);
         rvNews.setLayoutManager(new LinearLayoutManager(getContext()));
