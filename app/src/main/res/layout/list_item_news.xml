@@ -29,8 +29,8 @@
                     android:layout_width="88dp"
                     android:layout_height="88dp"
                     android:layout_marginRight="8dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/ic_launcher_foreground"/>
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/no_image_icon"/>
 
                 <TextView
                     android:id="@+id/title_news"

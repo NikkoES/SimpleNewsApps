@@ -50,7 +50,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
         final News news = listNews.get(position);
         Glide.with(context)
                 .load(news.getImgNews())
-                .placeholder(R.drawable.ic_launcher_foreground)
+                .placeholder(R.drawable.no_image_icon)
                 .into(holder.imgNews);
         holder.lblTitleNews.setText(news.getTitleNews());
         holder.lblDateNews.setText(news.getDateNews().substring(0,10)+" "+news.getDateNews().substring(11,16));

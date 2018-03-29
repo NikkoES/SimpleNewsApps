@@ -41,7 +41,7 @@ public class DetailNewsActivity extends AppCompatActivity {
 
         Glide.with(getApplicationContext())
                 .load(imgNews)
-                .placeholder(R.drawable.ic_launcher_foreground)
+                .placeholder(R.drawable.no_image_icon)
                 .into(ivImgNews);
         tvTitleNews.setText(titleNews);
         tvContentNews.setText(contentNews);
